@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
 import { StyleSheet, TextInput, View, Pressable, Text } from "react-native";
 import * as Yup from "yup";
 
 const LoginForm = () => {
+  const navigation = useNavigation()
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -13,7 +15,7 @@ const LoginForm = () => {
       password: Yup.string().required("required"),
     }),
     onSubmit: (values) => {
-      console.log(values);
+     navigation.replace("Application");
     },
   });
 
