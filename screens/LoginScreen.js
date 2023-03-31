@@ -1,10 +1,12 @@
 import { StyleSheet, View, Image } from "react-native";
-import Brand from "../components/Brand";
+import Brand from "../components/login/Brand";
+import LoginForm from "../components/login/LoginForm";
 
 const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Brand />
+      <LoginForm/>
     </View>
   );
 };

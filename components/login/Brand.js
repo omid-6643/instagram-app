@@ -5,7 +5,7 @@ const Brand = () => {
     <View style={styles.logoContainer}>
       <Image
         style={styles.logoImage}
-        source={require("./../assets/login-logo.png")}
+        source={require("../../assets/login-logo.png")}
       />
     </View>
   );
