@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 const Post = ({ posts }) => {
@@ -42,7 +42,57 @@ const PostImage = ({ post }) => (
     />
   </View>
 );
-const PostFooter = ({ post }) => <View></View>;
+
+const FooterButtons = ({ post }) => (
+  <View
+    style={{
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginVertical: 10,
+    }}
+  >
+    <View
+      style={{
+        flexDirection: "row",
+      }}
+    >
+      <TouchableOpacity>
+        <Image
+          source={require("../../assets/icons/heart.png")}
+          style={styles.icon}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image
+          source={require("../../assets/icons/comment.png")}
+          style={styles.icon}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image
+          source={require("../../assets/icons/send.png")}
+          style={styles.icon}
+        />
+      </TouchableOpacity>
+    </View>
+    <View>
+      <TouchableOpacity>
+        <Image
+          source={require("../../assets/icons/bookmark.png")}
+          style={styles.icon}
+        />
+      </TouchableOpacity>
+    </View>
+  </View>
+);
+const FooterDetails = ({ post }) => <View></View>;
+
+const PostFooter = ({ post }) => (
+  <View>
+    <FooterButtons />
+    <FooterDetails />
+  </View>
+);
 
 export default Post;
 
@@ -54,5 +104,11 @@ const styles = StyleSheet.create({
     marginLeft: 6,
     borderWidth: 3,
     borderColor: "tomato",
+  },
+  icon: {
+    width: 30,
+    height: 30,
+    marginRight: 10,
+    resizeMode: "contain",
   },
 });
