@@ -17,18 +17,39 @@ const LoginForm = () => {
     },
   });
 
+  const { handleChange, touched, values, handleSubmit, handleBlur, errors } = formik;
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.inputField}>
         <TextInput
           placeholder="phone number, username or email"
           placeholderTextColor="#444"
+          textContentType="emailAddress"
+          autoFocus
+          autoCapitalize="none"
+          onChangeText={handleChange("email")}
+          onBlur={handleBlur("email")}
         />
       </View>
+      {touched.email && errors.email ? (
+        <Text style={{ color: "red" }}>{errors.email}</Text>
+      ) : null}
       <View style={styles.inputField}>
-        <TextInput placeholder="password" placeholderTextColor="#444" />
+        <TextInput
+          placeholder="password"
+          placeholderTextColor="#444"
+          autoCorrect={false}
+          secureTextEntry
+          textContentType="password"
+          onChangeText={handleChange("password")}
+          onBlur={handleBlur("password")}
+        />
       </View>
-      <Pressable style={styles.button}>
+      {touched.password && errors.password ? (
+        <Text style={{ color: "red" }}>{errors.password}</Text>
+      ) : null}
+      <Pressable style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Log In</Text>
       </Pressable>
     </View>
