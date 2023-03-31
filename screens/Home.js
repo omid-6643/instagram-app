@@ -1,8 +1,13 @@
 import { StyleSheet, Text, SafeAreaView } from "react-native";
 import React from "react";
+import Header from "../components/home/Header";
 
 const Home = () => {
-  return <SafeAreaView style={styles.container}></SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container}>
+      <Header />
+    </SafeAreaView>
+  );
 };
 
 export default Home;
