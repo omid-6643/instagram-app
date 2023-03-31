@@ -43,7 +43,7 @@ const PostImage = ({ post }) => (
   </View>
 );
 
-const FooterButtons = ({ post }) => (
+const FooterButtons = () => (
   <View
     style={{
       flexDirection: "row",
@@ -85,12 +85,79 @@ const FooterButtons = ({ post }) => (
     </View>
   </View>
 );
-const FooterDetails = ({ post }) => <View></View>;
+
+const Comments = ({ post }) => (
+  <>
+    {post.comments.map((item, index) => {
+      return (
+        <View key={index} style={{ marginTop: 10 }}>
+          <Text
+            style={{
+              color: "white",
+            }}
+          >
+            <Text
+              style={{
+                fontWeight: "600",
+              }}
+            >
+              {item.user}
+            </Text>
+            {item.comment}
+          </Text>
+        </View>
+      );
+    })}
+  </>
+);
+
+const FooterDetails = ({ post }) => (
+  <>
+    <Text
+      style={{
+        color: "white",
+      }}
+    >
+      {post?.likes} likes
+    </Text>
+    <View
+      style={{
+        marginVertical: 10,
+      }}
+    >
+      <Text
+        style={{
+          color: "white",
+        }}
+      >
+        <Text
+          style={{
+            fontWeight: "900",
+          }}
+        >
+          {post.user}
+        </Text>
+        <Text>{post.caption}</Text>
+      </Text>
+    </View>
+    {!!post.comments.length && (
+      <Text
+        style={{
+          color: "gray",
+        }}
+      >
+        View {post.comments.length > 1 ? "all" : ""} {post.comments.length}{" "}
+        {post.comments.length > 1 ? "comments" : "comment"}
+      </Text>
+    )}
+    <Comments post={post} />
+  </>
+);
 
 const PostFooter = ({ post }) => (
   <View>
     <FooterButtons />
-    <FooterDetails />
+    <FooterDetails post={post} />
   </View>
 );
 
