@@ -2,7 +2,7 @@ import { StyleSheet, View, Image } from "react-native";
 import Brand from "../components/login/Brand";
 import LoginForm from "../components/login/LoginForm";
 
-const LoginScreen = () => {
+const Login = () => {
   return (
     <View style={styles.container}>
       <Brand />
@@ -11,7 +11,7 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default Login;
 
 const styles = StyleSheet.create({
   container: {
