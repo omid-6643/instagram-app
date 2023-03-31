@@ -38,8 +38,27 @@ const LoginForm = () => {
 export default LoginForm;
 
 const styles = StyleSheet.create({
-  wrapper: {},
-  inputField: {},
-  button: {},
-  buttonText: {},
+  wrapper: {
+    marginTop: 60,
+  },
+  inputField: {
+    borderWidth: 1,
+    borderRadius: 4,
+    padding: 12,
+    backgroundColor: "#fafafa",
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: "#0096f6",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 4,
+    minHeight: 42,
+    marginTop: 30,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "600",
+  },
 });
