@@ -34,7 +34,14 @@ const PostHeader = ({ post }) => (
     <Text style={{ color: "white", fontWeight: "900" }}>...</Text>
   </View>
 );
-const PostImage = ({ post }) => <View></View>;
+const PostImage = ({ post }) => (
+  <View style={{ width: "100%", height: 450 }}>
+    <Image
+      source={{ uri: post.image }}
+      style={{ height: "100%", resizeMode: "cover" }}
+    />
+  </View>
+);
 const PostFooter = ({ post }) => <View></View>;
 
 export default Post;
