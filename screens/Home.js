@@ -3,11 +3,15 @@ import React from "react";
 import Header from "../components/home/Header";
 import Stories from "../components/home/Stories";
 
+import posts from "../data/posts";
+import Posts from "../components/home/Posts";
+
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
       <Stories />
+      <Posts posts={posts[0]} />
     </SafeAreaView>
   );
 };
